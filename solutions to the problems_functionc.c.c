@@ -3,7 +3,7 @@
 
 int max1, max2;
 int N;
-int r=1,u=1,o=1;
+int x=1,y=1,z=1;
 int add (int x, int y)
 {
     int z = x+y;
@@ -62,52 +62,30 @@ int func1(int x, int a, int b,int c)
    f = a*x*x + b*x+c;
    return f;
 }
-int dice3(int x)
+int die3(int s)
 {
-    int v;
-    for(o=1; o<=6; o++){
-        for(u=1; u<=6; u++){
-            for (r=3; r<=6; r++){
-             v = o+u+r;
-             if (v==N){
-                printf("%d %d %d\n",r,o,u );}
-             else
-                break;
-             }
-            }
-        }
+    if(s==N)
+        printf("%d %d %d\n", x,y,z);
 }
-int dice2(int x)
+
+void die2(int s)
 {
-    int v;
-    for(o=1; o<=6; o++){
-        for(u=1; u<=6; u++){
-            for (r=2; r<=6; r++){
-             v = o+u+r;
-             if (v==N){
-                printf("%d %d %d\n",r,o,u );}
-             else
-                break;
-             }
-            }
-        }
-     dice3(o);
+    for(z=1;z<=6;z++)
+        die3(z+s);
 }
-int dice1(int x)
-{   int v;
-    for(o=1; o<=6; o++){
-        for(u=1; u<=6; u++){
-            for (r=1; r<=6; r++){
-             v = o+u+r;
-             if (v==N){
-                printf("%d %d %d\n",r,o,u );}
-             else
-                break;
-             }
-            }
-        }
-    dice2(u);
+
+
+void die1(int s)
+{
+    for(y=1;y<=6;y++)
+    {
+        die2(s+y);
     }
+}
+
+
+
+
 
 
 void update(int n)
@@ -213,8 +191,9 @@ void Problem9()
 
 void Problem10()
 {
-    scanf("%d", &N);
-    dice1(r);
+     scanf(" %d", &N);
+	for(x=1;x<=6;x++)
+	    die1(x);
 }
 
 int main()
@@ -240,3 +219,4 @@ int main()
     }
     return 0;
 }
+
