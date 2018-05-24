@@ -78,9 +78,6 @@ void problem_3()
     }
 
 }
-
-
-
 int main()
 {
     int n;
